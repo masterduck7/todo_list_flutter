@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list_flutter/app/views/home.dart';
+import 'package:todo_list_flutter/app/views/splash.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const SplashView(),
     );
   }
 }
