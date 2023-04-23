@@ -26,7 +26,7 @@ class SplashView extends StatelessWidget{
           ),
           const SizedBox(height: 99),
           Text('Lista de Tareas',
-              style: Theme.of(context).textTheme.bodyText2!.copyWith(
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                   fontSize: 18, fontWeight: FontWeight.w600)
           ),
           const SizedBox(height: 21),
