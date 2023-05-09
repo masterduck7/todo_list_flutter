@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list_flutter/app/views/splash.dart';
+import 'package:todo_list_flutter/app/views/splash/splash_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
     const textColor = Color(0xFF4a4a4a);
     const backgroundColor = Color(0xFFF5F5F5);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'TODO List',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: primary),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list_flutter/app/views/task_list.dart';
+import 'package:todo_list_flutter/app/views/components/text_title.dart';
+import 'package:todo_list_flutter/app/views/components/vector.dart';
+import 'package:todo_list_flutter/app/views/task_list/task_list_view.dart';
 
 class SplashView extends StatelessWidget{
   const SplashView({super.key});
@@ -11,12 +13,8 @@ class SplashView extends StatelessWidget{
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
-            children: [
-              Image.asset(
-                'assets/images/Vector.png',
-                width: 141,
-                height: 129,
-              ),
+            children: const [
+              Vector()
             ],
           ),
           const SizedBox(height: 73),
@@ -26,10 +24,7 @@ class SplashView extends StatelessWidget{
             height: 168,
           ),
           const SizedBox(height: 99),
-          Text('Lista de Tareas',
-              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                  fontSize: 18, fontWeight: FontWeight.w600)
-          ),
+          const TextTitle(text: 'Lista de Tareas'),
           const SizedBox(height: 21),
           GestureDetector(
             onTap: (){
