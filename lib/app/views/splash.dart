@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list_flutter/app/views/task_list.dart';
 
 class SplashView extends StatelessWidget{
   const SplashView({super.key});
@@ -30,10 +31,19 @@ class SplashView extends StatelessWidget{
                   fontSize: 18, fontWeight: FontWeight.w600)
           ),
           const SizedBox(height: 21),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 32),
-            child: Text('La mejor forma para que no se te olvide nada es anotarlo. Guardar tus tareas y ve completando poco a poco para aumentar tu productividad',
-              textAlign: TextAlign.center,
+          GestureDetector(
+            onTap: (){
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) {
+                    return const TaskListView();
+                  })
+              );
+              },
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 32),
+              child: Text('La mejor forma para que no se te olvide nada es anotarlo. Guardar tus tareas y ve completando poco a poco para aumentar tu productividad',
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
         ],
