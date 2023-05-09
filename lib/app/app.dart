@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list_flutter/app/views/splash.dart';
-import 'package:todo_list_flutter/app/views/task_list.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
           displayColor: textColor,
         )
       ),
-      home: const TaskListView(),
+      home: const SplashView(),
     );
   }
 }
