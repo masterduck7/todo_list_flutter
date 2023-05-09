@@ -25,6 +25,9 @@ class _TaskListViewState extends State<TaskListView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Task List"),
+      ),
       body: Center(child: Text("Actual value: $count")),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
