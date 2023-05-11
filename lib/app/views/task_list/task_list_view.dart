@@ -37,10 +37,13 @@ class TaskListView extends StatelessWidget {
               child: TextTitle(text: 'Tareas')
           ),
           Expanded(
-            child: ListView.separated(
-                itemCount: taskList.length,
-                separatorBuilder: (a,b) => const SizedBox(height: 16),
-                itemBuilder: (_, index) => Text(taskList[index].title),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: ListView.separated(
+                  itemCount: taskList.length,
+                  separatorBuilder: (_ ,__) => const SizedBox(height: 16),
+                  itemBuilder: (_, index) => _TaskItem(taskList[index]),
+              ),
             ),
           )
         ],
@@ -53,7 +56,36 @@ class TaskListView extends StatelessWidget {
   }
 }
 
+class _TaskItem extends StatelessWidget {
+  const _TaskItem(this.task, {Key? key}) : super(key: key);
+
+  final Task task;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(21)),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 21, vertical: 18),
+        child: Row(
+          children: [
+            Icon(
+              Icons.check_box_outline_blank,
+              color: Theme.of(context).colorScheme.primary
+            ),
+            const SizedBox(width: 12),
+            Text(task.title),
+          ],
+        ),
+      )
+    );
+  }
+}
+
 final taskList = [
+  Task("Task 1"),
+  Task("Task 2"),
+  Task("Task 3"),
   Task("Task 1"),
   Task("Task 2"),
   Task("Task 3"),
