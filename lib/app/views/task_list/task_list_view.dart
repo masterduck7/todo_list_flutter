@@ -53,10 +53,12 @@ class _TaskListState extends State<_TaskList> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const TextTitle(text: "Tareas"),
+          const SizedBox(height: 13),
           Expanded(
             child: ListView.separated(
-                itemCount: taskList.length,
-                separatorBuilder: (_ ,__) => const SizedBox(height: 16),
+              padding: const EdgeInsets.only(top: 0),
+              itemCount: taskList.length,
+                separatorBuilder: (_ ,__) => const SizedBox(height: 21),
                 itemBuilder: (_, index) => _TaskItem(taskList[index], onTap: () {
                   taskList[index].done = !taskList[index].done;
                   setState(() {});
