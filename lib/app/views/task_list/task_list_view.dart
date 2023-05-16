@@ -48,7 +48,16 @@ class _NewTaskModal extends StatelessWidget {
         children: [
           const TextTitle(text: "New Task"),
           const SizedBox(height: 26),
-          const TextField(),
+          TextField(
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              hintText: "Task description",
+            ),
+          ),
           const SizedBox(height: 26),
           ElevatedButton(
               onPressed: (){},
