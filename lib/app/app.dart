@@ -20,6 +20,9 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Poppins',
           bodyColor: textColor,
           displayColor: textColor,
+        ),
+        bottomSheetTheme: const BottomSheetThemeData(
+          backgroundColor: Colors.transparent,
         )
       ),
       home: const SplashView(),

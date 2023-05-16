@@ -16,12 +16,50 @@ class TaskListView extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => _showNewTaskModal(context),
         child: const Icon(Icons.add, size: 50),
       ),
     );
   }
+
+  void _showNewTaskModal(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        builder: (_) => const _NewTaskModal()
+    );
+  }
 }
+
+class _NewTaskModal extends StatelessWidget {
+  const _NewTaskModal({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 33, vertical: 23),
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(21)),
+        color: Colors.white,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const TextTitle(text: "New Task"),
+          const SizedBox(height: 26),
+          const TextField(),
+          const SizedBox(height: 26),
+          ElevatedButton(
+              onPressed: (){},
+              child: const Text("Save")
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 
 class _TaskList extends StatefulWidget {
   const _TaskList({
@@ -52,7 +90,7 @@ class _TaskListState extends State<_TaskList> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const TextTitle(text: "Tareas"),
+          const TextTitle(text: "Tasks"),
           const SizedBox(height: 13),
           Expanded(
             child: ListView.separated(
